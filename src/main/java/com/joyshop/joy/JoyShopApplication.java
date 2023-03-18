@@ -1,4 +1,4 @@
-package com.joyshop.joy_shop;
+package com.joyshop.joy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

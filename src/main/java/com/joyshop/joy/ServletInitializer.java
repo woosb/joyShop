@@ -1,4 +1,4 @@
-package com.joyshop.joy_shop;
+package com.joyshop.joy;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(com.joyshop.joy_shop.JoyShopApplication.class);
+        return application.sources(JoyShopApplication.class);
     }
 
 }
