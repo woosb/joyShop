@@ -1,12 +1,17 @@
 package com.joyshop.joy.domain.model;
 
+import com.joyshop.joy.domain.common.BaseEntity;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
 @Entity
 @Table(name = "Customer")
-public class Customer {
+@Data
+@EqualsAndHashCode(callSuper=false)
+public class Customer extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,6 +33,5 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     private List<Order> orders;
 
-    // getters and setters
 }
 
