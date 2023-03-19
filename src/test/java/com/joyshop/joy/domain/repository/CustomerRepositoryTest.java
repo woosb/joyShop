@@ -61,7 +61,7 @@ class CustomerRepositoryTest {
         customerDto.setEmail("asd123@naver.com");
         customerDto.setPhoneNumber("01012341234");
 
-        Customer customer = customerDto.convertDtoToEntity(customerDto);
+        Customer customer = CustomerDto.convertDtoToEntity(customerDto);
 
         assertEquals(customer.getClass(), Customer.class);
         assertEquals(customer.getCustomerId(), customerDto.getCustomerId());
