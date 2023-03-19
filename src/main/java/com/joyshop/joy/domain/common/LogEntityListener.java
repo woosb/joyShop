@@ -15,14 +15,7 @@ public class LogEntityListener {
 
     @PostPersist
     public void postPersist(Object entity) {
-        if(entity instanceof BaseEntity){
-            BaseEntity baseEntity = (BaseEntity) entity;
-            LocalDateTime createdAt = baseEntity.getCreatedAt();
-            LocalDateTime updatedAt = baseEntity.getUpdatedAt();
-            System.out.println("created at : "+ createdAt);
-            System.out.println("updated at : " + updatedAt);
-
-        }
+        baseEntityLogPrint(entity);
         System.out.println("[" + entity.getClass().getSimpleName() + "] has been persisted.");
     }
 
@@ -33,6 +26,7 @@ public class LogEntityListener {
 
     @PostUpdate
     public void postUpdate(Object entity) {
+        baseEntityLogPrint(entity);
         System.out.println("[" + entity.getClass().getSimpleName() + "] has been updated.");
     }
 
@@ -44,6 +38,16 @@ public class LogEntityListener {
     @PostRemove
     public void postRemove(Object entity) {
         System.out.println("[" + entity.getClass().getSimpleName() + "] has been removed.");
+    }
+
+    public void baseEntityLogPrint(Object entity){
+        if(entity instanceof BaseEntity){
+            BaseEntity baseEntity = (BaseEntity) entity;
+            LocalDateTime createdAt = baseEntity.getCreatedAt();
+            LocalDateTime updatedAt = baseEntity.getUpdatedAt();
+            System.out.println("created at : "+ createdAt);
+            System.out.println("updated at : " + updatedAt);
+        }
     }
 }
 
